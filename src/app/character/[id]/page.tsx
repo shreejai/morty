@@ -50,6 +50,7 @@ const Page: React.FC<PageProps> = ({params}) => {
   const {data, loading, error} = useQuery<CharacterData>(GET_CHARACTER, {
     variables: {id}
   });
+  if (loading) return <p className='flex items-center justify-center'>Loading...</p>;
   if(error) console.log(error);
 
   const character = data?.character;
