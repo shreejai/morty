@@ -55,18 +55,19 @@ const Page: React.FC<PageProps> = ({params}) => {
   const character = data?.character;
   
   return (
-    <div className='p-4 text-center max-w-[700px] mx-auto'>
-      <h1>Character Details</h1>
+    <div className='p-4 text-center mx-auto w-fit flex flex-col gap-4'>
+      <h1 className='text-2xl font-bold'>Character Details</h1>
 
       {character && (
-        <div key={character.id}>
-          <h2>{character.name}</h2>
-          <Image src={character.image} alt={character.name} width={100} height={100} className='mx-auto'/>
-          <p>Species:{character.species}</p>
-          <p>Status: {character.status}</p>
+        <div key={character.id} className='flex flex-col gap-4'>
+          <h2><span className='text-slate-400'>Name:</span> {character.name}</h2>
+          <Image src={character.image} alt={character.name} width={200} height={200} className='mx-auto'/>
+          <p><span className='text-slate-400'>Species:</span> {character.species}</p>
+          <p><span className='text-slate-400'>Status:</span> {character.status}</p>
           <div className='text-left'>
+            <h3 className='text-xl text-slate-400'>Seen in:</h3>
           {character.episode.map(({id, name})=>(
-            <div key={id}>Episode{id}: {name}</div>
+            <div key={id}><span className='text-slate-400'>Ep.{id}:</span> {name}</div>
           ))}
           </div>
         </div>
