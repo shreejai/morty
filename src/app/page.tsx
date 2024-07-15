@@ -71,7 +71,7 @@ export default function Home() {
                 {name}
               </p>
               <p>{species}</p>
-              <a href={`/${id}`} className='bg-slate-500 w-fit px-4 py-2 hover:bg-white hover:text-black'>Read more</a>
+              <a href={`/character/${id}`} className='bg-slate-500 w-fit px-4 py-2 hover:bg-white hover:text-black'>Read more</a>
             </div>
           ))}
       </div>
