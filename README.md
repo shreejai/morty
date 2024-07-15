@@ -12,7 +12,7 @@ homepage.
 - Responsive Design: The application is accessible and usable on mobile devices as well as desktop.
 
 ## Setup the project locally
-1. Clone the project using `git clone git@github.com:shreejai/morty.git`
+1. Clone the project using `git clone https://github.com/shreejai/morty.git`
 2. Run npm install to install all the dependencies
 3. Run `npm run dev` in the root directory to start the development server.
 4. Open http://localhost:3000 with your browser to see the result.
