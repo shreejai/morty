@@ -20,6 +20,10 @@ homepage.
 ## Design
 This application uses Tailwind CSS for styling React components and all pages.
 
+## Test
+To run Jest test, run: `npm test`
+To generate a coverage report, run: `npm test -- --coverage`
+
 ## Learn More
 To learn more about Next.js, take a look at the following resources:
 
