@@ -4,7 +4,7 @@ character information.
 
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/dcd70b92-6349-451f-ac65-18a857787e4d">
 
-## Usage Instructions
+## Features
 - View Characters: As a user, you will see a list of Rick and Morty characters when you visit the
 homepage.
 - Search Characters: A user can search for characters by name using the searchbar provided at the top of the homepage.
