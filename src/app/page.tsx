@@ -12,18 +12,24 @@ interface Character {
 
 interface CharactersData {
   characters: {
-    results: Character[]
+    results: Character[];
+    info: {
+      pages: number;
+    }
   }
 }
 
 const GET_CHARACTERS = gql`
-  query GetCharacters($name: String!) {
-    characters(page: 1, filter:{name: $name}) {
+  query GetCharacters($name: String!, $page: Int!) {
+    characters(page: $page, filter:{name: $name}) {
       results {
         id
         name
         image
         species
+      }
+      info {
+        pages
       }
     }
   }
@@ -32,12 +38,15 @@ const GET_CHARACTERS = gql`
 export default function Home() {
 
   const [name, setName] = useState('');
+  const [page, setPage] = useState(1);
 
   const {data, loading, error} = useQuery<CharactersData>(GET_CHARACTERS, {
-    variables: {name}
+    variables: {name, page}
   });
 
   if(error) console.log(error);
+
+  const isLastPage = data?.characters.info.pages  === page;
 
   return (
     <>
@@ -63,6 +72,16 @@ export default function Home() {
               <a href={`/${id}`} className='bg-slate-500 w-fit px-4 py-2 hover:bg-white hover:text-black'>Read more</a>
             </div>
           ))}
+      </div>
+      <div className="flex gap-4 items-center justify-center">
+        {(page >= 1) &&
+          <button className="bg-slate-500 px-4 py-2 disabled:bg-slate-700 disabled:text-slate-500" onClick={()=>{setPage(page - 1)}} disabled={page === 1}>
+            Previous
+          </button>
+        }
+          <button className="bg-slate-500 px-4 py-2 disabled:bg-slate-700 disabled:text-slate-500" onClick={()=>{setPage(page + 1)}} disabled={isLastPage}>
+            Next
+          </button>
       </div>
     </main>
     </>
