@@ -3,38 +3,7 @@ import SearchBar from "@/components/SearchBar";
 import { gql, useQuery } from "@apollo/client";
 import Image from "next/image";
 import { useState } from "react";
-
-interface Character {
-  id: string
-  name: string
-  image: string
-  species: string
-}
-
-interface CharactersData {
-  characters: {
-    results: Character[];
-    info: {
-      pages: number;
-    }
-  }
-}
-
-const GET_CHARACTERS = gql`
-  query GetCharacters($name: String!, $page: Int!) {
-    characters(page: $page, filter:{name: $name}) {
-      results {
-        id
-        name
-        image
-        species
-      }
-      info {
-        pages
-      }
-    }
-  }
-`
+import { GET_CHARACTERS, CharactersData } from "@/lib/fetch-data";
 
 export default function Home() {
 
