@@ -2,6 +2,8 @@
 This is a responsive web application that utilizes the Rick and Morty GraphQL API, Typescript and Nextjs to display
 character information.
 
+<img width="1440" alt="image" src="https://github.com/user-attachments/assets/dcd70b92-6349-451f-ac65-18a857787e4d">
+
 ## Usage Instructions
 - View Characters: As a user, you will see a list of Rick and Morty characters when you visit the
 homepage.
