@@ -5,38 +5,6 @@ import Image from "next/image";
 import { useState } from "react";
 import { GET_CHARACTERS, CharactersData } from "@/lib/fetch-data";
 
-// interface Character {
-//   id: string
-//   name: string
-//   image: string
-//   species: string
-// }
-
-// interface CharactersData {
-//   characters: {
-//     results: Character[];
-//     info: {
-//       pages: number;
-//     }
-//   }
-// }
-
-// export const GET_CHARACTERS = gql`
-//   query GetCharacters($name: String!, $page: Int!) {
-//     characters(page: $page, filter:{name: $name}) {
-//       results {
-//         id
-//         name
-//         image
-//         species
-//       }
-//       info {
-//         pages
-//       }
-//     }
-//   }
-// `
-
 export default function Home() {
 
   const [name, setName] = useState('');
