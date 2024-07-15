@@ -58,7 +58,7 @@ const Page: React.FC<PageProps> = ({params}) => {
   
   return (
     <div className='p-4 text-center mx-auto w-fit flex flex-col gap-4'>
-      <Link href='/' className='text-left text-slate-400 hover:text-white'>{`<--Back`}</Link>
+      <Link href='/' className='text-left text-green-400 hover:text-white'>{`<--Back`}</Link>
       <h1 className='text-2xl font-bold'>Character Details</h1>
 
       {character && (
