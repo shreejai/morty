@@ -52,8 +52,8 @@ export default function Home() {
   return (
     <>
     <main className="p-6 text-center">
-      <h1>Rick and Morty Characters</h1>
-      <SearchBar/>
+      <h1 className="mb-2">Rick and Morty Characters</h1>
+      <SearchBar onSearch={setName}/>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
       {loading ? <p>Loading...</p> :data?.characters.results.map(({ id, name, image, species }) => (
             <div
